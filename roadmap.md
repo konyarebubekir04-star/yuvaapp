@@ -1,4 +1,4 @@
-# OrtakYuva
+# YUVAAPP
 - [x] Calm Turkish application and mobile navigation
 - [x] Secure accounts, profiles, family sharing and permissions
 - [x] Calendar, care, messages, reminders and weekly summaries
