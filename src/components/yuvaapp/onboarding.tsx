@@ -50,7 +50,7 @@ export function Onboarding() {
 
   return (
     <div className="auth-page">
-      <span className="brand"><span className="brand-icon"><House /><Heart size={10} /></span>OrtakYuva.</span>
+      <span className="brand"><span className="brand-icon"><House /><Heart size={10} /></span>YUVAAPP.</span>
       <section className="surface auth-form onb">
         <div className="onb-progress"><i style={{ width: `${((step + 1) / steps.length) * 100}%` }} /></div>
         <span className="eyebrow">ADIM {step + 1} / {steps.length}</span>

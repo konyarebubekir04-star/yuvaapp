@@ -10,10 +10,9 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import { FamilyProvider } from '@/components/ortakyuva/data';
+import { FamilyProvider } from '@/components/yuvaapp/data';
 import { Toaster } from 'sonner';
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -40,9 +39,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -81,10 +77,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
       { name: "theme-color", content: "#ffffff" },
-      { title: "OrtakYuva" },
+      { title: "YUVAAPP" },
       { name: "description", content: "İki ev. Tek bir sevgi. Ortak ebeveynlik aile alanınız." },
       
-      { property: "og:title", content: "OrtakYuva" },
+      { property: "og:title", content: "YUVAAPP" },
       { property: "og:description", content: "İki ev. Tek bir sevgi. Ortak ebeveynlik aile alanınız." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
