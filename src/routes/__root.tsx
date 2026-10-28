@@ -10,10 +10,10 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import { FamilyProvider } from '@/components/ortakyuva/data';
+import { FamilyProvider } from '@/components/yuvaapp/data';
 import { Toaster } from 'sonner';
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportLovableError } from "../lib/error-capture";
 
 function NotFoundComponent() {
   return (
