@@ -19,4 +19,9 @@
 @media(prefers-reduced-motion:no-preference){.page-content{animation:enter .35s ease-out}@keyframes enter{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}}
 @media(max-width:767px){.child-overview>a{display:none}}
 .onb{display:flex;flex-direction:column;gap:14px}.onb h2{font-size:20px}.onb-progress{height:4px;border-radius:4px;background:var(--muted);overflow:hidden}.onb-progress i{display:block;height:100%;background:var(--primary);transition:width .3s}.onb-choice{display:flex;flex-direction:column;align-items:flex-start;gap:3px;position:relative;text-align:left;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--card);color:var(--foreground);cursor:pointer}.onb-choice small{color:var(--muted-foreground)}.onb-choice.selected{border-color:var(--primary);background:var(--accent)}.onb-choice svg{position:absolute;right:14px;top:18px;color:var(--primary)}
-.auth-form{background:color-mix(in oklab,var(--card) 68%,transparent);backdrop-filter:blur(18px) saturate(140%);}
+.auth-form{background:color-mix(in oklab,var(--card) 42%,transparent);backdrop-filter:blur(22px) saturate(150%);box-shadow:0 18px 50px -18px color-mix(in oklab,var(--foreground) 45%,transparent);}
+.auth-form h2{font-weight:700}
+.auth-form label{font-weight:600}
+.auth-form .auth-divider,.auth-form .auth-switch{color:var(--foreground)}
+.auth-intro .eyebrow,.auth-intro p{color:var(--foreground);text-shadow:0 1px 8px color-mix(in oklab,var(--card) 70%,transparent)}
+.auth-trust{color:var(--foreground);font-weight:600;text-shadow:0 1px 8px color-mix(in oklab,var(--card) 70%,transparent)}
