@@ -8,5 +8,5 @@ Ayrı yaşayan anne ve babalar için ortak ebeveynlik uygulaması: ortak takvim,
 git clone <this-repository-url>
 cd <repository-name>
 npm i
-npm run dev
+npm run dev 
 ```
