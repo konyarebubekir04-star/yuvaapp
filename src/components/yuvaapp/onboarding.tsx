@@ -4,8 +4,10 @@ import type { Json } from '@/integrations/supabase/types';
 import { useFamily } from './data';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { House, Heart, ArrowLeft, ArrowRight, Check } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { toast } from 'sonner';
+import logo from '@/assets/logo.png';
+import { OnboardingScene } from './onboarding-scene';
 
 type Answers = { name: string; parent: string; mode: string; child: string; code: string; allergy: string; emergency: string };
 
@@ -49,8 +51,9 @@ export function Onboarding() {
   );
 
   return (
-    <div className="auth-page">
-      <span className="brand"><span className="brand-icon"><House /><Heart size={10} /></span>YUVAAPP.</span>
+    <div className="auth-page onb-page">
+      <div className="onb-scene" aria-hidden="true"><OnboardingScene /></div>
+      <span className="brand"><img src={logo} alt="" className="brand-logo" />YUVAAPP.</span>
       <section className="surface auth-form onb">
         <div className="onb-progress"><i style={{ width: `${((step + 1) / steps.length) * 100}%` }} /></div>
         <span className="eyebrow">ADIM {step + 1} / {steps.length}</span>
@@ -62,7 +65,7 @@ export function Onboarding() {
           {current === 'code' && <><h2>Davet kodunu girin</h2><p className="text-muted-foreground">Kodu diğer ebeveyn Ayarlar sayfasından paylaşabilir.</p><Input autoFocus required value={a.code} onChange={e => set('code', e.target.value)} placeholder="Davet kodu" /></>}
           {current === 'allergy' && <><h2>{a.child} için bilinen bir alerji var mı?</h2><p className="text-muted-foreground">İsterseniz boş bırakıp sonra ekleyebilirsiniz.</p><Input autoFocus value={a.allergy} onChange={e => set('allergy', e.target.value)} placeholder="Örn. fıstık" /></>}
           {current === 'emergency' && <><h2>Acil durumda kime ulaşılsın?</h2><p className="text-muted-foreground">İsim ve telefon. İsteğe bağlı.</p><Input autoFocus value={a.emergency} onChange={e => set('emergency', e.target.value)} placeholder="Ad · telefon" /></>}
-          <div className="flex justify-between gap-3">
+          <div className="flex justify-between gap-3 onb-nav">
             {step > 0 ? <Button type="button" variant="ghost" onClick={() => setStep(step - 1)}><ArrowLeft />Geri</Button> : <span />}
             <Button type="submit" disabled={!canNext || busy}>{busy ? 'Hazırlanıyor…' : last ? 'Tamamla' : 'Devam'}{!busy && <ArrowRight />}</Button>
           </div>
